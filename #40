@@ -1,0 +1,10 @@
+number = ''
+for i in range(1, 1000001):
+    number += str(i)
+
+result = 1
+for j in range(0, 7):
+    nextNumber = int(number[10 ** j - 1])
+    result *= nextNumber
+
+print(result)
