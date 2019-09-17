@@ -1,0 +1,26 @@
+def Programm():
+    d = 1000
+    maxListLength = 0
+    maxNumberLength = 0
+    for i in range(1, d):
+        currentCycle = FindCycleLength(i)
+        if currentCycle > maxListLength:
+            maxListLength = currentCycle
+            maxNumberLength = i
+    print(maxNumberLength)
+    
+def FindCycleLength(n):
+    cycleLength = 0
+    listOfRemainders = []
+    x = 1
+    while(True):
+        if x % n == 0:
+            break
+        elif x in listOfRemainders:
+            break
+        listOfRemainders.append(x)
+        x = (x * 10) % n
+        cycleLength += 1
+    return(cycleLength)
+    
+Programm()
